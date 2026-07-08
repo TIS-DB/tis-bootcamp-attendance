@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TIS Bootcamp Attendance Scanner</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <section class="card">
+
+      <div class="header">
+        <div class="logo-circle">TIS</div>
+        <h1>Bootcamp Attendance</h1>
+        <p>QR Scanner</p>
+      </div>
+
+      <label for="sessionName">Select Session</label>
+      <select id="sessionName">
+        <option value="">Select session</option>
+        <option value="Day 1 Morning Check-in">Day 1 Morning Check-in</option>
+        <option value="Day 1 Lunch Return">Day 1 Lunch Return</option>
+        <option value="Day 1 Afternoon Session">Day 1 Afternoon Session</option>
+        <option value="Day 1 Checkout">Day 1 Checkout</option>
+        <option value="Day 2 Morning Check-in">Day 2 Morning Check-in</option>
+        <option value="Day 2 Lunch Return">Day 2 Lunch Return</option>
+        <option value="Day 2 Afternoon Session">Day 2 Afternoon Session</option>
+        <option value="Day 2 Checkout">Day 2 Checkout</option>
+      </select>
+
+      <label for="scannedBy">Volunteer Name</label>
+      <input id="scannedBy" type="text" placeholder="Enter volunteer name" />
+
+      <button id="startBtn" onclick="startScanner()">Start Scanner</button>
+      <button id="stopBtn" onclick="stopScanner()" class="secondary hidden">Stop Scanner</button>
+
+      <div id="reader"></div>
+
+      <div id="resultBox" class="result hidden"></div>
+
+      <div class="note">
+        QR should contain only Student ID, for example: <b>SCH-001</b>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/scanner.js"></script>
+
+</body>
+</html>
